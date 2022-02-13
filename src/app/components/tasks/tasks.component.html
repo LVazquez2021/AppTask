@@ -14,8 +14,12 @@
         <h6>No hay tareas para mostrar</h6>
       </div>
       <ul class="list-group">
-        <li *ngFor="let task of listTasks" class="list-group-item">
+        <li *ngFor="let task of listTasks" class="list-group-item d-flex justify-content-between">
+          <span><i class="fa-regular fa-circle"></i></span>
           {{ task.nombre }}
+          <span>
+            <i class="fa-solid fa-trash-can"></i>
+          </span>
         </li>
       </ul>
     </div>
