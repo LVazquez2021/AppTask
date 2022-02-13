@@ -15,10 +15,14 @@
       </div>
       <ul class="list-group">
         <li *ngFor="let task of listTasks;let i=index" class="list-group-item d-flex justify-content-between">
-          <span class="cursor"><i class="fa-regular fa-circle"></i></span>
+          <span class="cursor" (click)="updateTask(task, i)">
+            <i [class.text-success]="task.estado" [ngClass]="task.estado ?'fa-solid fa-circle-check fa-lg':'fa-regular fa-circle fa-lg' "></i>
+            <!-- <i class="fa-regular fa-circle"></i>
+            <i class="fa-solid fa-circle-check"></i> -->
+          </span>
           {{ task.nombre }}
           <span class="cursor text-danger" (click)="deleteTask(i)">
-            <i class="fa-solid fa-trash-can"></i>
+            <i class="fa-solid fa-trash-can fa-lg"></i>
           </span>
         </li>
       </ul>

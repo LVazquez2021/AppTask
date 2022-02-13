@@ -32,4 +32,8 @@ export class TasksComponent implements OnInit {
   deleteTask(index: number): void {
     this.listTasks.splice(index, 1);
   }
+
+  updateTask(task: Task, index: number): void {
+    this.listTasks[index].estado = !task.estado;
+  }
 }
